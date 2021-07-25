@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.20)  17 JUL 2021 19:50
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.20)  17 MAR 2021 20:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Sanghoon_Park_CV.tex
-(./Sanghoon_Park_CV.tex
+**apsr_scholarship_program_cv.tex
+(./apsr_scholarship_program_cv.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-01-09> xparse <2020-03-03> (./res.cls
 Document Style `res' <26 Sep 89>.
@@ -290,7 +290,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 12.
 (c:/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-No file Sanghoon_Park_CV.aux.
+No file apsr_scholarship_program_cv.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
 LaTeX Font Info:    ... okay on input line 44.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
@@ -408,14 +408,14 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 ) [1
 
 ]
-[2] [3] [4] ) 
+[2] ) 
 Here is how much of TeX's memory you used:
  12549 strings out of 477220
- 232225 string characters out of 5834001
- 589343 words of memory out of 5000000
+ 232302 string characters out of 5834001
+ 588354 words of memory out of 5000000
  32141 multiletter control sequences out of 15000+600000
  403910 words of font info for 43 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 96i,8n,103p,950b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 96i,8n,103p,961b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Sanghoon_Park_CV.pdf (4 pages).
+Output written on apsr_scholarship_program_cv.pdf (2 pages).
