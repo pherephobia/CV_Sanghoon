@@ -1,0 +1,918 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  16,
+]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[]{libertinus}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=15mm,left=15mm,right=15mm,bottom=15mm,heightrounded]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\pagestyle{empty}
+\usepackage{fontawesome5}
+\setlength{\multicolsep}{2pt plus 1.0pt minus 0.75pt}% 50% of original values
+\usepackage{vwcol}
+\setlength{\columnsep}{3em}
+\pagestyle{plain}
+\setcounter{page}{1}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, frame hidden, enhanced, sharp corners, breakable]}{\end{tcolorbox}}\fi
+
+\begin{huge}\begin{center}{\bf SANGHOON PARK}\end{center}\end{huge}
+
+\begin{center}
+{\faEnvelope}\href{sp23@email.sc.edu}{\ttfamily sp23@email.sc.edu} ∙
+{\faLink} \href{sanghoon-park.com}{\ttfamily sanghoon-park.com} ∙ 
+{\faGithub} \href{https://github.com/pherephobia}{\ttfamily github.com/pherephobia}
+\end{center}
+\vspace{15pt}
+
+\vspace{3pt}
+\begin{large}
+ {\bf EDUCATION}
+  \vspace{3pt}
+  \hrule
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf University of South Carolina}\end{flushleft}
+    \begin{flushright}Expected Apr 2023\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}Ph.D. Candidate: Political Science\end{flushleft}
+    \begin{flushright}Columbia, SC\end{flushright}
+  \end{multicols}
+  \vspace{-0.25cm}
+  \hspace{3pt}\textit{Fields for Comprehensive Exams:}\\
+  \vspace{-0.25cm}
+  \hspace{6pt}\textit{Comprative Politics} (Major, passed with distinction), \textit{International Relations} (Minor)
+\end{large}
+\vspace{3pt}
+
+\vspace{7pt}
+\begin{large}
+   \begin{multicols}{2}
+    \begin{flushleft}{\bf Hankuk University of Foreign Studies}\end{flushleft}
+    \begin{flushright}Feb 2017\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}M.A.: Political Science and International Relations\end{flushleft}
+    \begin{flushright}Seoul, ROK\end{flushright}
+  \end{multicols}
+  \vspace{-0.25cm}
+  \hspace{3pt}Advisor: Dr. Jaemook Lee (Political Science), and specially Daejin Yi (Political Science)
+\end{large}
+\vspace{3pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Hankuk University of Foreign Studies}\end{flushleft}
+    \begin{flushright}Feb 2015\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}B.A.: Political Science and International Relations\end{flushleft}
+    \begin{flushright}Seoul, ROK\end{flushright}
+  \end{multicols}
+\end{large}
+\vspace{7pt}
+
+\begin{large}{\bf RESEARCH INTERESTS}
+  \vspace{3pt}
+  \hrule
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Comparative Politics}\end{flushleft}
+    \begin{flushright}\end{flushright}
+  \end{multicols}
+\end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Authoritarian regimes, Regime survival, Comparative institutions,
+  Political economics of inequality and redistribution
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf International Relations}\end{flushleft}
+    \begin{flushright}\end{flushright}
+  \end{multicols}
+\end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Democratic diffusion, Economic shocks, Economic sanctions, Foreign
+  aids
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}{\bf PEER-REVIEWED ARTICLES}
+  \vspace{3pt}
+  \hrule
+\end{large}
+  \begin{itemize}
+    \item[9.] \textbf{Park, Sanghoon}. 2022. ``\href{http://www.partystudies.or.kr/contents/bbs/bbs_list.html?bbs_cls_cd=004003}{Effect of reasons for re-election on voting participation and outcomes: An empirical examination of re/by-elections for the Korean National Assembly after democratization.}"  \textit{Korean Party Studies Review} 21(3): 41-80. 
+\item[8.] Kang, Jiyoon, \textbf{Sanghoon Park}, and Sun Gue Yang. 2022. ``\href{http://basicdata.kr/board/read/journals/146/}{Leadership in Communication:
+How Leadership and Communication Affect Public Service Motivation (PSM)}." \textit{Journal of Research Methodology} 7(1): 23-60.
+\item[7.] \textbf{Park, Sanghoon}, Chaehoon Lee, and Ilgi Kim. 2020. ``\href{https://www.earticle.net/Journal/Issues/511/28448}{Infectious Disease Management and New Security Strategies: The Case of African Swine Fever in South Korea}." \textit{The Journal of Peace Studies} 21(2): 143-174.
+\item[6.] \textbf{Park, Sanghoon}, and Jaeyoung Hur. 2020. ``\href{http://www.discourse201.org/html/sub05_01.asp}{Does North Korea Policies Reflect Public Opinion? The Public Awareness Survey Around the 4.27 Panmunjom Declaration}." \textit{Discourse 201} 23(2): 83-113.
+\item[5.] Lee, Jaehoon, and \textbf{Sagnhoon Park}. 2020. ``\href{https://m.nec.go.kr/portal/cmm/fms/FileDown.do?atchFileId=5d0ffae936edc42f3b4e864801f86a0f4096c44da03fede418b94067e8f9d0ea&fileSn=1&bbsId=&searchYear=}{Climate and Electoral Participation: The Effect of Particulate Matter on Election in South Korea}'' \textit{The Study of Election} 12(1): 77-98.  
+\item[4.] \textbf{Park, Sanghoon}, Jaemook Lee, and Daejin Yi. 2017. \href{http://www.dbpia.co.kr/Journal/ArticleDetail/NODE07183479?TotalCount=1&Seq=1&q=%5B%EB%8F%85%EC%9E%AC%EA%B5%AD%EA%B0%80%EC%99%80%20%EC%9E%AC%EB%B6%84%EB%B0%B0%C2%A7coldb%C2%A72%C2%A751%C2%A73%5D&searchWord=%EC%A0%84%EC%B2%B4%3D%5E%24%EB%8F%85%EC%9E%AC%EA%B5%AD%EA%B0%80%EC%99%80%20%EC%9E%AC%EB%B6%84%EB%B0%B0%5E*&Multimedia=0&isIdentifyAuthor=0&Collection=0&SearchAll=%EB%8F%85%EC%9E%AC%EA%B5%AD%EA%B0%80%EC%99%80%20%EC%9E%AC%EB%B6%84%EB%B0%B0&isFullText=0&specificParam=0&SearchMethod=0&Sort=1&SortType=desc&Page=1&PageSize=20#}{``Dictatorships and Redistribution: Empirical Analysis of Redistribution by Dictatorships Sub-regime Type."} \textit{OUGHTOPIA} 32(1), 271-314.
+\item[3.] Oh, Sujin, \textbf{Sanghoon Park}, and Jaemook Lee. 2017. \href{http://www.dbpia.co.kr/Journal/ArticleDetail/NODE07131578?TotalCount=1&Seq=1&q=%5B%EC%9D%B4%EC%9E%AC%EB%AC%B5%20%EC%98%A4%EC%88%98%EC%A7%84%20%EB%B0%95%EC%83%81%ED%9B%88%20%EA%B3%84%EA%B8%89%ED%88%AC%ED%91%9C%C2%A7coldb%C2%A72%C2%A751%C2%A73%5D&searchWord=%EC%A0%84%EC%B2%B4%3D%5E%24%EC%9D%B4%EC%9E%AC%EB%AC%B5%20%EC%98%A4%EC%88%98%EC%A7%84%20%EB%B0%95%EC%83%81%ED%9B%88%20%EA%B3%84%EA%B8%89%ED%88%AC%ED%91%9C%5E*&Multimedia=0&isIdentifyAuthor=0&Collection=0&SearchAll=%EC%9D%B4%EC%9E%AC%EB%AC%B5%20%EC%98%A4%EC%88%98%EC%A7%84%20%EB%B0%95%EC%83%81%ED%9B%88%20%EA%B3%84%EA%B8%89%ED%88%AC%ED%91%9C&isFullText=0&specificParam=0&SearchMethod=0&Sort=1&SortType=desc&Page=1&PageSize=20#}{``Class Betrayal Voting and Political Knowledge in the 20th Korean General Election." \textit{Korean Political Science Review} 51(1), 153-180.}
+\item[2.] Park, Youngdeuk, \textbf{Sanghoon Park}. 2016. \href{http://kiss.kstudy.com/thesis/thesis-view.asp?key=3472800}{``Determinants of Voting Choice in Brexit Referendum: Skill Level and Job Competition in the Labor Market."} \textit{The Korean Journal of Area Studies} 34(3), 1-31. 
+\item[1.] \textbf{Park, Sanghoon}. 2015. \href{http://search.koreanstudies.net/thesis/thesis-view.asp?key=3438155}{``Welfare Expenditure and Economic Growth: The Sub-types of Welfare Expenditure of OECD countries."} \textit{Global Political Research} 9(2), 81-107.    
+\end{itemize}
+
+\vspace{-0.16cm}
+
+\vspace{7pt}
+
+\begin{large}{\bf OTHER PUBLICATIONS}
+  \vspace{3pt}
+  \hrule
+\end{large}
+\begin{itemize}
+  \item[2.] Wilson, Matthew and \textbf{Sanghoon Park}. "Empirical Indicators of Democracy and Authoritarianism." In {\it Oxford Bibliographies in Political Science}. Ed. Sandy Maised. New York: Oxford University Press. DOI: \href{https://www.oxfordbibliographies.com/display/document/obo-9780199756223/obo-9780199756223-0348.xml}{10.1093/OBO/9780199756223-0348}.
+    \item[1.] \textbf{Park, Sanghoon} and Jaeyoung Hur. 2021. "What do we know and do not know?: Attitudes toward North Korea and unification." In {\it Issues and Perspectives in Korean Peace Process.} Hankuk University of Foreign Studies Knowledge Contents \& Press.
+\end{itemize}
+\vspace{-0.16cm}
+
+\vspace{7pt}
+
+\begin{large}{\bf UNDER REVIEWS}
+  \vspace{3pt}
+  \hrule
+\end{large}
+\begin{itemize}
+\item[3.] Wilson, Charles Matthew, Christopher Howell, Kelsey Martin-Morales, and \textbf{Sanghoon Park}. 2022. ``Concept Mapping and Reading Comprehension."
+\item[2.] Park, Chun-Young and \textbf{Sanghoon Park}. 2022. ``You Scratch My Back, and I Scratch Yours: An Explanation of Dyadic Politics of Naming and Shaming."
+\item[1.] Hur, Jaeyoung, Hyun-Hee Heo, \textbf{Sanghoon Park}, Deok-Hyun Jang, Jin-Yong Lee, Jin-Yong, and Won-Mo Jang. 2022. ``Risk Perceptions, Ideology, and Voting Intentions During the COVID-19 Pandemic: A Cross-sectional Study in South Korea."
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}{\bf WORKS IN PROGRESS}
+  \vspace{3pt}
+  \hrule
+\end{large}
+\begin{itemize}
+    \item[4.] ``Expanding China's Influence in the International Human Rights Regime." (with Hyunkyu Kim)
+    \item[3.] ``Party Institutionalization and Civil Conflict." (with Dr. Matthew C. Wilson)
+    \item[2.] ``Digital Technology and the Choice to Repress or Co-opt." (with Emily Harmon and Kuanwu Chen)
+    %\item[2.] ``You Scratch My Back and I Scratch Yours: An Explanation of Dyadic Politics of Naming and Shaming"
+    % \item[3.] ``Heterogeneous Democratization: Elite Politics and Economic Sanctions."
+    \item[1.] ``Why Do Authoritarian Regimes Provide the Welfare Programs?"
+%   \item[4.] ``Why Some Authoritarian Regimes Grow More than Other Authoritarian Regimes?."
+%   \item[3.] ``When Democratic Breakdown Happens? Inequality and Democratic Consolidation."
+    % \item[1.] ``The Welfare States without Labour in Asia: Power Resources Theory Revisited."
+%   \item[1.] ``Labour condition and the society: unstability and Infertility, the conditional effects of labour protection."
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}{\bf HONORS, AWARDS, AND GRANTS}
+  \vspace{3pt}
+  \hrule
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf University of South Carolina}\end{flushleft}
+    \begin{flushright}Aug 2018-May 2023\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{Department of Political Science}\end
+    {flushleft}\begin{flushright}Columbia, SC\end
+    {flushright}
+  \end{multicols}
+\end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  ACAF 4.00 Graduate Assistantships
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf EITM Institute}\end{flushleft}
+    \begin{flushright}June 2022-Jul 2022\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{University of California, Berkeley}\end
+    {flushleft}\begin{flushright}Berkeley, CA\end
+    {flushright}
+  \end{multicols}
+\end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://eitminstitute.org/institute/2022/}{2022 EITM Summer Institute}
+  (\$750)
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf EITM Institute}\end{flushleft}
+    \begin{flushright}June 2020-Aug 2020\end{flushright}
+  \end{multicols}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{University of Michigan, Ann Arbor}\end
+    {flushleft}\begin{flushright}Ann Arbor, MI\end
+    {flushright}
+  \end{multicols}
+\end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://52.2.147.143/icpsrweb/content/sumprog/scholarships/winners-2020.html}{EITM Certification Scholarships}
+\item
+  Both sessions at the ICPSR Summer Program (\$4,000)
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf University of South Carolina}\end{flushleft}
+    \begin{flushright}2020\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{Department of Political Science}\end
+    {flushleft}\begin{flushright}Columbia, SC\end
+    {flushright}
+  \end{multicols}
+\end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Outstanding Graduate Student Awards
+\item
+  The Second Annual Conference Funding Competition: Joint award (\$500)
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}{\bf CONFERENCE PRESENTATIONS}
+  \vspace{3pt}
+  \hrule
+\end{large}
+
+\begin{itemize}
+  \item[22.] Kim, Hyun-kyu and {\bf Sanghoon Park}. {2022.} {``Chinese Foreign Policy and the Evolution of Human Rights Discourse.''} {\it The Summer Meeting of the Korean Association of International Studies,} Seoul, ROK.
+  \item[21.] {\bf Park, Sanghoon} and Chunyoung Park. {2022.} {``You Scratch My Back and I Scratch Yours: An Explanation of Dyadic Politics of Naming and Shaming.''} {\it The Annual Conference for Midwest Political Science Association,} Chicago, IL, US.
+  \item[20.] Wilson, Matthew Charles, Chris Howell, Kelsey Morgan Martin Morales, and {\bf Sanghoon Park}. {2022.} {``Concept Mapping and Reading Comprehension.''} {\it The Annual Conference for Midwest Political Science Association,} Chicago, IL, US.
+  \item[19.] Jiyoon Kang and {\bf Park, Sanghoon}. {2022.} {``Willing to be a protester: Violence, solidarity, and durability of protests.''} {\it the 63rd ISA Annual Convention,} Nashville, TN, US.
+  \item[18.] {\bf Park, Sanghoon}, Emily Harmon, and Kuan-Wu Chen. {2022.} {``Digital Technology and the Choice to Repress or Co-opt.''} {\it the 63rd ISA Annual Convention,} Nashville, TN, US.
+  \item[17.] {\bf Park, Sanghoon}. {2022.} {``Social Capital and the Success of Economic Sanction."} {\it third annual Carolinas Conflict Consortium,} Columbia, SC, US.
+  \item[16.] {\bf Park, Sanghoon} and Chunyoung Park. {2021.} {``You Scratch My Back and I Scratch Yours: An Explanation of Dyadic Politics of Naming and Shaming.''} {\it ISA-South Annual Meeting 2021,} Atlanta, GA, US.
+  \item[15.] {\bf Park, Sanghoon}. {2021.} {``Heterogeneous Democratization: Economic Sanctions and Elite Politics''} {\it The Annual Conference for Midwest Political Science Association,} Virtual conference.
+  \item[14.] {\bf Park, Sanghoon}. {2020.} {``Why Do Authoritarian Regimes Provide Welfare Programs?''} {\it The Annual Conference for Midwest Political Science Association,} Chicago, IL, US.
+  \item[13.] {\bf Park, Sanghoon}. {2020.} \href{https://www.dropbox.com/s/7xr90ielm1vh1sd/poster.pdf?dl=0}{\tt Poster PDF.} {``When Does Water Bring Conflicts?''} {\it second annual Carolinas Conflict Consortium,} Charlotte, NC, US.
+  \item[12.] {\bf Park, Sanghoon}. {2020.} {``Why Do Authoritarian Regimes Provide Welfare?''} {\it The Annual Conference for Southern Political Science Association,} San Juan, PR, US.
+  \item[11.] {\bf Park, Sanghoon}. {2019.} {``Why Do Authoritarian Regimes Provide Welfare?''} {\it The World Congress for Korean Politics and Society,} Seoul, ROK.
+  \item[10.] {\bf Park, Sanghoon}. {2018.} {``Authoritarian Welfare State and Inequality''} {\it The Summer Meeting of Korean Political Science Association,} Busan, ROK.
+  \item[9.] {\bf Park, Sanghoon}. {2017.} {``Political Regimes and Economic Growth: The Autonomy and Constraints of Ruling Institutions''} {\it The Winter Meeting of Korean Political Science Association,} Seoul, ROK.
+  \item[8.] {\bf Park, Sanghoon}, Jaemook Lee, and Youngdeuk Park. {2017.} {``Attitudes toward Security issues and Class Betrayal Voting.''} {\it The Summer Meeting of the Korean Association of Party Studies,} Busan, ROK.
+  \item[7.] {\bf Park, Sanghoon}. {2017.} {``Asian Political Regimes and Economic Growth: the Non-linear Relationships and Indirect Path.''} {\it The Closing Presentation of Institutes for Political Methodology,} Taipei, TW.
+  \item[6.] {\bf Park, Sanghoon} and Youngdeuk Park. {2017.} {``Government Debt and Welfare expenditure: the heterogeneous effects of expenditures.''} {\it The Summer Meeting of the Korean Association of International Studies,} Jeonju, ROK.
+  \item[5.] {\bf Park, Sanghoon} and Gidong Kim. {2017.} {``Attitudes to North Korea and Vote Choice: The heterogeneous effect of political knowledge of North Korea.''} {\it The World Congress for Korean Politics and Society,} Seoul, ROK.
+  \item[4.] {\bf Park, Sanghoon} and Suna Jeong. {2017.} {``Aid and Redistribution: the distributional effects of aid in recipient countries.''} {\it The World Congress for Korean Politics and Society,} Seoul, ROK.
+  \item[3.] {\bf Park, Sanghoon} and Sujin Oh. {2016.} {``Class Betrayal Voting and Political Knowledge in the 20th Korean General Election.''} {\it The Winter Meeting of the Korean Political Science Association,} Seoul, ROK.
+  \item[2.] {\bf Park, Sanghoon}. {2016.} {``The North Korea as Dictatorship: How It Redistributes for What.''} {\it The Annual Meeting of The Korean Association of Peace Studies,} Jeju, ROK.
+  \item[1.] {\bf Park, Sanghoon}. {2016.} {``Dictatorships and Redistribution: Empirical Analysis of Redistribution by Dictatorship Sub-regime Type.''} {\it The Summer Meeting of the Korean Political Science Association,} Seoul, ROK.
+\end{itemize}
+\vspace{-0.16cm}
+
+\vspace{7pt}
+
+\begin{large}{\bf RESEARCH EXPERIENCE}
+  \vspace{3pt}
+  \hrule
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Graduate Research Assistan}\end{flushleft}
+    \begin{flushright}2020-2021\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{University of South Carolina}\end{flushleft}
+    \begin{flushright}Columbia, SC\end{flushright}
+  \end{multicols}
+  \end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  The College of Arts and Sciences Innovative Teaching Associate Program
+\item
+  Principal investigator: Professor Wilson C. Matthew (Political
+  Science, University of South Carolina)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Fall 2021: Project leader
+  \item
+    Spring 2020: Project participant
+  \item
+    Fall 2020: Project participant
+  \end{itemize}
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Research Assistant}\end{flushleft}
+    \begin{flushright}2021\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{National Assembly Research Service}\end{flushleft}
+    \begin{flushright}Seoul, ROK\end{flushright}
+  \end{multicols}
+  \end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  A Study on Activation of Democratic Political Participation in the
+  Post-COVID-19 Era
+\item
+  Principal investigator: Professor Jaemook Lee (Political Science,
+  Hankuk University of Foreign Studies)
+\item
+  Co-investigator: Dr.~Soohyun Jung (Korea Institute for Future
+  Politics, Myongji University)
+\item
+  Co-investigator: Dr.~Youngdeuk Park (Political Science, Chungnam
+  National University)
+\end{itemize}
+
+\vspace{7pt}
+\newpage
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Research Assistant}\end{flushleft}
+    \begin{flushright}2020\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{Korea Democracy Foundation}\end{flushleft}
+    \begin{flushright}Seoul, ROK\end{flushright}
+  \end{multicols}
+  \end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  The Barriers COVID-19 Re-established: What Makes Democracy Sick?
+\item
+  Co-Principal investigator: M.A.~Chaehoon Lee (Korean Standards
+  Association)
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Principal Investigator}\end{flushleft}
+    \begin{flushright}2016\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{People’s Party}\end{flushleft}
+    \begin{flushright}Seoul, ROK\end{flushright}
+  \end{multicols}
+  \end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  An Analysis on Voter's Perception and Preference upon People's Party.
+\item
+  Principal investigator: Professor Jaemook Lee (Political Science,
+  Hankuk University of Foreign Studies)
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Research Assistant}\end{flushleft}
+    \begin{flushright}2015\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{Ministry of Unification}\end{flushleft}
+    \begin{flushright}Seoul, ROK\end{flushright}
+  \end{multicols}
+  \end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  The Verification of the Nuclear Disarmament.
+\item
+  Principal investigator: Dr.~Ilgi Kim (The Institute for National
+  Security Strategy)
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Research Assistant}\end{flushleft}
+    \begin{flushright}2015\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{National Research Foundation of Korea}\end{flushleft}
+    \begin{flushright}Seoul, ROK\end{flushright}
+  \end{multicols}
+  \end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Health Cooperation and Conflict among G20 Countries: Focusing on the
+  Epidemic Cases of Global Society in the 21th Century
+\item
+  Principal investigator: Professor Sanghwan Lee (Political Science,
+  Hankuk University of Foreign Studies)
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}{\bf TEACHING EXPERIENCE}
+  \vspace{3pt}
+  \hrule
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Instructor}\end{flushleft}
+    \begin{flushright}2021-2022\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{University of South Carolina}\end{flushleft}
+    \begin{flushright}Columbia, SC\end{flushright}
+  \end{multicols}
+  \end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Spring 2022: International Relations (U)
+\item
+  Fall 2021: Comparative Politics (U)
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Teaching Assistant}\end{flushleft}
+    \begin{flushright}2018-2022\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{University of South Carolina}\end{flushleft}
+    \begin{flushright}Columbia, SC\end{flushright}
+  \end{multicols}
+  \end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Fall 2022: American National Government (U)
+\item
+  Spring 2021: Introduction to Global Politics (U)
+\item
+  Fall 2020: Introduction to Global Politics (U)
+\item
+  Spring 2020: Genocide: A Comparative Perspective (U)
+\item
+  Fall 2019: International Relations (U)
+\item
+  Spring 2019: Democratic Theory (U)
+\item
+  Fall 2018: Comparative Politics (U)
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Teaching Assistant}\end{flushleft}
+    \begin{flushright}2015-2016\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{Hankuk University of Foreign Studies}\end{flushleft}
+    \begin{flushright}Seoul, ROK\end{flushright}
+  \end{multicols}
+  \end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Spring 2016: Research Methodology in Political Science (U)
+\item
+  Spring 2015: Civil Society (U)
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}{\bf TEACHING INTERESTS}
+  \vspace{3pt}
+  \hrule
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Comparative Politics}\end{flushleft}
+    \begin{flushright}\end{flushright}
+  \end{multicols}
+\end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Introduction to Comparative Politics, Democracy and Dictatorship,
+  Comparative institutions
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf International Relations}\end{flushleft}
+    \begin{flushright}\end{flushright}
+  \end{multicols}
+\end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Introduction to International Relations
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf Political Methodology}\end{flushleft}
+    \begin{flushright}\end{flushright}
+  \end{multicols}
+\end{large}
+\vspace{-0.16cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Introduction to Statistical Methods for Political Science
+\end{itemize}
+
+\vspace{7pt}
+\newpage
+
+\begin{large}
+  {\bf PROFESSIONAL AFFILIATION}
+  \vspace{3pt}
+  \hrule
+  \textit{Graduate Student Membership}
+  \end{large}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{American Political Science Association}\end{flushleft}
+    \begin{flushright}2021-Present\end{flushright}
+  \end{multicols}
+    \begin{multicols}{2}
+    \begin{flushleft}\textit{Midwest Political Science Association}\end{flushleft}
+    \begin{flushright}2019-Present\end{flushright}
+  \end{multicols}
+    \begin{multicols}{2}
+    \begin{flushleft}\textit{Southern Political Science Association}\end{flushleft}
+    \begin{flushright}2019-Present\end{flushright}
+  \end{multicols}
+    \begin{multicols}{2}
+    \begin{flushleft}\textit{International Studies Association}\end{flushleft}
+    \begin{flushright}2021-Present\end{flushright}
+  \end{multicols}
+    \begin{multicols}{2}
+    \begin{flushleft}\textit{Korean Association of Party Studies}\end{flushleft}
+    \begin{flushright}2022-Present\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+
+\vspace{7pt}
+
+\begin{large}
+  {\bf PROFESSIONAL SERVICE ACTIVITIES}
+\end{large}
+  \vspace{3pt}
+  \hrule
+  \begin{multicols}{2}
+    \begin{flushleft}International Relations and Comparative Politics Brown bag\end{flushleft}
+    \begin{flushright}2018-Present\end{flushright}
+  \end{multicols}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{Department of Political Science, UofSC}\end{flushleft}
+    \begin{flushright}Columbia, SC\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+
+\begin{itemize}
+\tightlist
+\item
+  2018-Present: Presenter and Discussant
+\end{itemize}
+
+  \begin{multicols}{2}
+    \begin{flushleft}The Annual Conference\end{flushleft}
+    \begin{flushright}Apr 2022\end{flushright}
+  \end{multicols}
+  \begin{multicols}{2}
+    \begin{flushleft}\textit{Midwest Political Science Association}\end{flushleft}
+    \begin{flushright}Chicago, IL\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+
+\begin{itemize}
+\tightlist
+\item
+  2022: Chair and Presenter
+\end{itemize}
+
+\vspace{7pt}
+
+\begin{large}
+  {\bf EXTRA CURRICULUM \& SKILLS}
+  \vspace{3pt}
+  \end{large}
+  \hrule
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf EITM Summer Institute}\end{flushleft}
+    \begin{flushright}June 2021-Jul 2021\end{flushright}
+  \end{multicols}
+    \begin{multicols}{2}
+    \begin{flushleft}{\it University of California, Berkeley}\end{flushleft}
+    \begin{flushright}Berkeley, CA\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Causal inference and theoretical models
+\item
+  Practicum on building theoretical models
+\item
+  Theory evaluation in experimental, observational, and qualitative
+  research
+\item
+  The role of theory and identification in generalized causal inference
+\item
+  Theory building and evaluation in comparative politics, international
+  relations, political behavior, and political institutions
+\end{itemize}
+
+\vspace{7pt}
+
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf ICPSR Summer Program}\end{flushleft}
+    \begin{flushright}May 2021\end{flushright}
+  \end{multicols}
+    \begin{multicols}{2}
+    \begin{flushleft}{\it University of Michigan}\end{flushleft}
+    \begin{flushright}Ann Arbor, MI\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+
+\begin{itemize}
+\tightlist
+\item
+  Network Analysis: Statistical Approach (Short Workshop)
+\end{itemize}
+
+\vspace{7pt}
+
+  \begin{multicols}{2}
+    \begin{flushleft}{\bf ICPSR Summer Program}\end{flushleft}
+    \begin{flushright}June 2020-Aug 2020\end{flushright}
+  \end{multicols}
+    \begin{multicols}{2}
+    \begin{flushleft}{\it University of Michigan}\end{flushleft}
+    \begin{flushright}Ann Arbor, MI\end{flushright}
+  \end{multicols}
+  \vspace{-0.17cm}
+
+\begin{itemize}
+\item
+  First Session: June 22nd-July 17th, 2020
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Bayesian Modeling for the Social Sciences I: Introduction and
+    Application
+  \item
+    Maximum Likelihood Estimation I: Generalized Linear Models
+  \item
+    Introduction to Python (July 6-17)
+  \end{enumerate}
+\item
+  Second Session: July 20th-August 14th, 2020
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Game Theory
+  \item
+    Bayesian Modeling for the Social Sciences II: Advanced Topics
+  \item
+    Causal Inference for the Social Sciences
+  \end{enumerate}
+\end{itemize}
+
+\vspace{7pt}
+
+\textbf{Computing Skills}: R, STATA, Python, \LaTeX,
+\href{https://quarto.org/}{Quarto}, Markdown, Git \&
+\href{www.github.com}{Github}
+
+\vspace{7pt}
+
+\textbf{Languages}: Korean (fluent), Japanese (fluent), English (highly
+proficient)
+
+\mbox{} \vfill \centering \textit{Last updated: \today}
+
+
+
+\end{document}
